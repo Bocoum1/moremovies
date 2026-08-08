@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="650" viewBox="0 0 1400 650" role="img" aria-labelledby="title desc">
+  <title id="title">Architecture décisionnelle de MoreMovies</title>
+  <desc id="desc">Trois sources sont intégrées par Pentaho PDI dans une base commune, puis dans un entrepôt ROLAP analysé avec Mondrian, MDX et Power BI.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6f1e8"/>
+      <stop offset="1" stop-color="#e8f0ed"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e66b35"/>
+      <stop offset="1" stop-color="#b73d24"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#153d47" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e66b35"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="650" rx="28" fill="url(#background)"/>
+  <circle cx="1320" cy="80" r="145" fill="#e66b35" opacity="0.08"/>
+  <circle cx="95" cy="610" r="180" fill="#0e5266" opacity="0.07"/>
+
+  <text x="70" y="80" fill="#123b4a" font-family="Georgia, serif" font-size="42" font-weight="700">MoreMovies</text>
+  <text x="70" y="118" fill="#50707a" font-family="Verdana, sans-serif" font-size="19">De trois systèmes hétérogènes à une plateforme décisionnelle unifiée</text>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="170" width="245" height="335" rx="22" fill="#ffffff"/>
+    <rect x="345" y="245" width="215" height="185" rx="22" fill="url(#accent)"/>
+    <rect x="590" y="220" width="220" height="235" rx="22" fill="#123b4a"/>
+    <rect x="840" y="195" width="220" height="285" rx="22" fill="#ffffff"/>
+    <rect x="1090" y="220" width="240" height="235" rx="22" fill="#0e5266"/>
+  </g>
+
+  <text x="95" y="210" fill="#123b4a" font-family="Verdana, sans-serif" font-size="15" font-weight="700" letter-spacing="2">SOURCES</text>
+  <g font-family="Verdana, sans-serif">
+    <rect x="95" y="235" width="195" height="62" rx="12" fill="#eef4f2"/>
+    <text x="115" y="262" fill="#123b4a" font-size="17" font-weight="700">Buckboaster</text>
+    <text x="115" y="282" fill="#6a7f85" font-size="13">films et gadgets</text>
+    <rect x="95" y="315" width="195" height="62" rx="12" fill="#eef4f2"/>
+    <text x="115" y="342" fill="#123b4a" font-size="17" font-weight="700">Metrostarlet</text>
+    <text x="115" y="362" fill="#6a7f85" font-size="13">ventes et locations</text>
+    <rect x="95" y="395" width="195" height="62" rx="12" fill="#eef4f2"/>
+    <text x="115" y="422" fill="#123b4a" font-size="17" font-weight="700">MovieMegamart</text>
+    <text x="115" y="442" fill="#6a7f85" font-size="13">catalogues séparés</text>
+  </g>
+
+  <g font-family="Verdana, sans-serif" text-anchor="middle">
+    <text x="452" y="290" fill="#fff6ee" font-size="15" font-weight="700" letter-spacing="2">INTÉGRATION</text>
+    <text x="452" y="337" fill="white" font-size="27" font-weight="700">Pentaho PDI</text>
+    <text x="452" y="370" fill="#ffe0cf" font-size="14">40 transformations</text>
+    <text x="452" y="394" fill="#ffe0cf" font-size="14">nettoyage · mapping · ETL</text>
+
+    <text x="700" y="267" fill="#b8d1d5" font-size="15" font-weight="700" letter-spacing="2">RÉFÉRENTIEL</text>
+    <text x="700" y="317" fill="white" font-size="25" font-weight="700">mm_integrated</text>
+    <text x="700" y="354" fill="#d9e7e8" font-size="14">clients · magasins</text>
+    <text x="700" y="378" fill="#d9e7e8" font-size="14">produits · transactions</text>
+    <text x="700" y="412" fill="#f4a176" font-size="14" font-weight="700">modèle harmonisé</text>
+
+    <text x="950" y="242" fill="#123b4a" font-size="15" font-weight="700" letter-spacing="2">ENTREPÔT ROLAP</text>
+    <text x="950" y="292" fill="#123b4a" font-size="25" font-weight="700">mm_warehouse</text>
+    <text x="950" y="331" fill="#50707a" font-size="14">4 dimensions partagées</text>
+    <text x="950" y="357" fill="#50707a" font-size="14">2 tables de faits</text>
+    <text x="950" y="383" fill="#50707a" font-size="14">3 agrégats mensuels</text>
+    <rect x="885" y="411" width="130" height="34" rx="17" fill="#f4e2d7"/>
+    <text x="950" y="433" fill="#b73d24" font-size="13" font-weight="700">schéma en étoile</text>
+
+    <text x="1210" y="267" fill="#b8d1d5" font-size="15" font-weight="700" letter-spacing="2">ANALYSE</text>
+    <text x="1210" y="315" fill="white" font-size="24" font-weight="700">Mondrian + MDX</text>
+    <text x="1210" y="350" fill="#d9e7e8" font-size="14">3 cubes · 5 requêtes</text>
+    <line x1="1140" y1="378" x2="1280" y2="378" stroke="#6fa2ad"/>
+    <text x="1210" y="415" fill="#f4a176" font-size="18" font-weight="700">Power BI</text>
+  </g>
+
+  <g fill="none" stroke="#e66b35" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M315 337 H337"/>
+    <path d="M560 337 H582"/>
+    <path d="M810 337 H832"/>
+    <path d="M1060 337 H1082"/>
+  </g>
+
+  <g font-family="Verdana, sans-serif">
+    <text x="70" y="565" fill="#123b4a" font-size="14" font-weight="700">OBJECTIF</text>
+    <text x="70" y="596" fill="#50707a" font-size="18">Rendre comparables les ventes, locations, produits et clients de trois enseignes.</text>
+    <rect x="1080" y="548" width="250" height="55" rx="27" fill="#ffffff" opacity="0.9"/>
+    <text x="1205" y="582" fill="#123b4a" font-size="15" text-anchor="middle" font-weight="700">MySQL · PDI · OLAP · BI</text>
+  </g>
+</svg>

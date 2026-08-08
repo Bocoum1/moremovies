@@ -1,0 +1,4 @@
+SELECT
+  {[Measures].[Duree Moyenne Location]} ON COLUMNS,
+  [Produit].[Type Produit].Members ON ROWS
+FROM [Locations]

@@ -1,0 +1,8 @@
+SELECT
+  {[Measures].[CA Vente]} ON COLUMNS,
+  TopCount(
+    [Produit].[Produit].Members,
+    10,
+    [Measures].[CA Vente]
+  ) ON ROWS
+FROM [Ventes]

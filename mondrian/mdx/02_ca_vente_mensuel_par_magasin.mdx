@@ -1,0 +1,7 @@
+SELECT
+  {[Measures].[CA Vente], [Measures].[Nombre Ventes]} ON COLUMNS,
+  CrossJoin(
+    [Periode].[Mois].Members,
+    [Magasin].[Magasin].Members
+  ) ON ROWS
+FROM [Ventes]

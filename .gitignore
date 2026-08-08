@@ -1,0 +1,31 @@
+# Local secrets
+mondrian/local/mondrian.env
+*.env
+
+# Java build artifacts
+*.class
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Archives and heavy local artifacts
+*.zip
+*.mdb
+*.odb
+
+# Generated reporting exports
+pbi_exports/*.csv
+pbi_exports/*.tsv
+
+# Local runner outputs
+mondrian/local/build/
+
+# Local database files
+.local/

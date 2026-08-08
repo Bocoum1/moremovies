@@ -1,0 +1,4 @@
+SELECT
+  {[Measures].[Nombre Locations], [Measures].[CA Location]} ON COLUMNS,
+  [Client.Age].[Tranche Age].Members ON ROWS
+FROM [Locations]

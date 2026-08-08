@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS mm_src_buckboaster
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+CREATE DATABASE IF NOT EXISTS mm_src_metrostarlet
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+CREATE DATABASE IF NOT EXISTS mm_src_moviemegamart
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+CREATE DATABASE IF NOT EXISTS mm_integrated
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;
+
+CREATE DATABASE IF NOT EXISTS mm_warehouse
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_0900_ai_ci;

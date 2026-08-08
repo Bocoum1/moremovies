@@ -1,0 +1,23 @@
+name: Validate repository
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate project artifacts
+        run: python3 scripts/validate_repository.py
+
+      - name: Validate shell scripts
+        run: |
+          find mondrian pbi_exports -type f -name '*.sh' -print0 \
+            | xargs -0 -n1 bash -n

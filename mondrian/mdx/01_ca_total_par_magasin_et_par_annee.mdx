@@ -1,0 +1,7 @@
+SELECT
+  {[Measures].[CA Total]} ON COLUMNS,
+  CrossJoin(
+    [Periode Agg].[Annee].Members,
+    [Magasin].[Magasin].Members
+  ) ON ROWS
+FROM [CA Global Mensuel]

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="MoreMoviesWarehouse">
+
+  <Dimension name="Magasin">
+    <Hierarchy hasAll="true" allMemberName="Tous les magasins" primaryKey="magasin_key">
+      <Table name="DIM_MAGASIN"/>
+      <Level name="Reseau" column="reseau" uniqueMembers="false"/>
+      <Level name="Magasin" column="magasin_key" nameColumn="nom_magasin" uniqueMembers="true"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Produit">
+    <Hierarchy hasAll="true" allMemberName="Tous les produits" primaryKey="produit_key">
+      <Table name="DIM_PRODUIT"/>
+      <Level name="Type Produit" column="type_produit" uniqueMembers="false"/>
+      <Level name="Categorie Produit" column="categorie_produit" uniqueMembers="false"/>
+      <Level name="Produit" column="produit_key" nameColumn="titre" uniqueMembers="true"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Client">
+    <Hierarchy name="Age" hasAll="true" allMemberName="Tous les clients" primaryKey="client_key">
+      <Table name="DIM_CLIENT"/>
+      <Level name="Groupe Age" column="groupe_age" uniqueMembers="false"/>
+      <Level name="Tranche Age" column="tranche_age" uniqueMembers="false"/>
+      <Level name="Client" column="client_key" nameColumn="nom" uniqueMembers="true"/>
+    </Hierarchy>
+    <Hierarchy name="Genre" hasAll="true" allMemberName="Tous les clients" primaryKey="client_key">
+      <Table name="DIM_CLIENT"/>
+      <Level name="Genre" column="genre" uniqueMembers="false"/>
+      <Level name="Client" column="client_key" nameColumn="nom" uniqueMembers="true"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Dimension name="Periode" type="TimeDimension">
+    <Hierarchy hasAll="true" allMemberName="Toutes les dates" primaryKey="date_key">
+      <Table name="DIM_PERIODE"/>
+      <Level name="Annee" column="annee" type="Numeric" uniqueMembers="false" levelType="TimeYears"/>
+      <Level name="Mois" column="mois" nameColumn="libelle_mois" type="Numeric" uniqueMembers="false" levelType="TimeMonths"/>
+      <Level name="Jour" column="date_key" nameColumn="date_complete" type="Numeric" uniqueMembers="true" levelType="TimeDays"/>
+    </Hierarchy>
+  </Dimension>
+
+  <Cube name="Ventes" cache="true" enabled="true">
+    <Table name="FACT_VENTE">
+      <AggName name="AGG_VENTE_MOIS_MAGASIN_PRODUIT">
+        <AggFactCount column="nombre_ventes"/>
+        <AggIgnoreColumn column="vente_fact_id"/>
+        <AggForeignKey factColumn="magasin_key" aggColumn="magasin_key"/>
+        <AggForeignKey factColumn="produit_key" aggColumn="produit_key"/>
+        <AggLevel name="[Periode].[Annee]" column="annee"/>
+        <AggLevel name="[Periode].[Mois]" column="mois"/>
+        <AggMeasure name="[Measures].[CA Vente]" column="ca_vente"/>
+        <AggMeasure name="[Measures].[Nombre Ventes]" column="nombre_ventes"/>
+      </AggName>
+    </Table>
+
+    <DimensionUsage name="Magasin" source="Magasin" foreignKey="magasin_key"/>
+    <DimensionUsage name="Produit" source="Produit" foreignKey="produit_key"/>
+    <DimensionUsage name="Client" source="Client" foreignKey="client_key"/>
+    <DimensionUsage name="Periode" source="Periode" foreignKey="date_key"/>
+
+    <Measure name="CA Vente" column="montant_vente" aggregator="sum" formatString="#,##0.00"/>
+    <Measure name="Nombre Ventes" column="nombre_ventes" aggregator="sum" formatString="#,##0"/>
+    <Measure name="Nombre Clients" column="client_key" aggregator="distinct-count" formatString="#,##0"/>
+
+    <CalculatedMember name="CA Moyen" dimension="Measures"
+      formula="[Measures].[CA Vente] / IIF([Measures].[Nombre Ventes] = 0, NULL, [Measures].[Nombre Ventes])"
+      formatString="#,##0.00"/>
+    <CalculatedMember name="Nombre Moyen Ventes" dimension="Measures"
+      formula="[Measures].[Nombre Ventes] / IIF([Measures].[Nombre Clients] = 0, NULL, [Measures].[Nombre Clients])"
+      formatString="#,##0.00"/>
+  </Cube>
+
+  <Cube name="Locations" cache="true" enabled="true">
+    <Table name="FACT_LOCATION">
+      <AggName name="AGG_LOCATION_MOIS_MAGASIN_PRODUIT">
+        <AggFactCount column="nombre_locations"/>
+        <AggIgnoreColumn column="location_fact_id"/>
+        <AggForeignKey factColumn="magasin_key" aggColumn="magasin_key"/>
+        <AggForeignKey factColumn="produit_key" aggColumn="produit_key"/>
+        <AggLevel name="[Periode].[Annee]" column="annee"/>
+        <AggLevel name="[Periode].[Mois]" column="mois"/>
+        <AggMeasure name="[Measures].[CA Location]" column="ca_location"/>
+        <AggMeasure name="[Measures].[Nombre Locations]" column="nombre_locations"/>
+        <AggMeasure name="[Measures].[Duree Location Totale]" column="duree_location_totale"/>
+      </AggName>
+    </Table>
+
+    <DimensionUsage name="Magasin" source="Magasin" foreignKey="magasin_key"/>
+    <DimensionUsage name="Produit" source="Produit" foreignKey="produit_key"/>
+    <DimensionUsage name="Client" source="Client" foreignKey="client_key"/>
+    <DimensionUsage name="Periode" source="Periode" foreignKey="date_key"/>
+
+    <Measure name="CA Location" column="montant_location" aggregator="sum" formatString="#,##0.00"/>
+    <Measure name="Nombre Locations" column="nombre_locations" aggregator="sum" formatString="#,##0"/>
+    <Measure name="Duree Location Totale" column="duree_location_jours" aggregator="sum" formatString="#,##0"/>
+    <Measure name="Nombre Clients" column="client_key" aggregator="distinct-count" formatString="#,##0"/>
+
+    <CalculatedMember name="CA Moyen" dimension="Measures"
+      formula="[Measures].[CA Location] / IIF([Measures].[Nombre Locations] = 0, NULL, [Measures].[Nombre Locations])"
+      formatString="#,##0.00"/>
+    <CalculatedMember name="Nombre Moyen Locations" dimension="Measures"
+      formula="[Measures].[Nombre Locations] / IIF([Measures].[Nombre Clients] = 0, NULL, [Measures].[Nombre Clients])"
+      formatString="#,##0.00"/>
+    <CalculatedMember name="Duree Moyenne Location" dimension="Measures"
+      formula="[Measures].[Duree Location Totale] / IIF([Measures].[Nombre Locations] = 0, NULL, [Measures].[Nombre Locations])"
+      formatString="#,##0.00"/>
+  </Cube>
+
+  <Cube name="CA Global Mensuel" cache="true" enabled="true">
+    <Table name="AGG_CA_MOIS_MAGASIN"/>
+
+    <DimensionUsage name="Magasin" source="Magasin" foreignKey="magasin_key"/>
+    <Dimension name="Periode Agg" type="TimeDimension" foreignKey="mois">
+      <Hierarchy hasAll="true" allMemberName="Toutes les periodes">
+        <Table name="AGG_CA_MOIS_MAGASIN"/>
+        <Level name="Annee" column="annee" type="Numeric" uniqueMembers="false" levelType="TimeYears"/>
+        <Level name="Mois" column="mois" type="Numeric" uniqueMembers="false" levelType="TimeMonths"/>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="CA Vente" column="ca_vente" aggregator="sum" formatString="#,##0.00"/>
+    <Measure name="CA Location" column="ca_location" aggregator="sum" formatString="#,##0.00"/>
+    <Measure name="CA Total" column="ca_total" aggregator="sum" formatString="#,##0.00"/>
+  </Cube>
+
+</Schema>

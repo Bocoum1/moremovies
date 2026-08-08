@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <rect width="1400" height="850" fill="#f3f6fb"/>
+  <text x="70" y="70" font-family="Georgia, serif" font-size="34" fill="#1f2937">Page 2 - Top films ventes</text>
+  <rect x="70" y="110" width="1260" height="100" rx="18" fill="#ffffff" stroke="#dbe3f0"/>
+  <text x="100" y="155" font-family="Arial" font-size="22" fill="#1f2937">Slicers recommandes : annee, magasin</text>
+  <text x="100" y="190" font-family="Arial" font-size="18" fill="#6b7280">Objectif : montrer les 5 films aux plus forts CA et leur evolution mensuelle.</text>
+  <rect x="70" y="250" width="560" height="520" rx="20" fill="#ffffff" stroke="#dbe3f0"/>
+  <rect x="690" y="250" width="640" height="520" rx="20" fill="#ffffff" stroke="#dbe3f0"/>
+  <text x="100" y="295" font-family="Arial" font-size="24" fill="#1f2937">Top 5 films par CA</text>
+  <rect x="140" y="340" width="390" height="38" fill="#2563eb"/>
+  <rect x="140" y="410" width="330" height="38" fill="#3b82f6"/>
+  <rect x="140" y="480" width="300" height="38" fill="#60a5fa"/>
+  <rect x="140" y="550" width="250" height="38" fill="#93c5fd"/>
+  <rect x="140" y="620" width="220" height="38" fill="#bfdbfe"/>
+  <text x="140" y="330" font-family="Arial" font-size="18" fill="#4b5563">Film A</text>
+  <text x="140" y="400" font-family="Arial" font-size="18" fill="#4b5563">Film B</text>
+  <text x="140" y="470" font-family="Arial" font-size="18" fill="#4b5563">Film C</text>
+  <text x="140" y="540" font-family="Arial" font-size="18" fill="#4b5563">Film D</text>
+  <text x="140" y="610" font-family="Arial" font-size="18" fill="#4b5563">Film E</text>
+  <text x="720" y="295" font-family="Arial" font-size="24" fill="#1f2937">Evolution mensuelle des films retenus</text>
+  <line x1="760" y1="690" x2="1260" y2="690" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="770" y1="690" x2="770" y2="350" stroke="#9ca3af" stroke-width="2"/>
+  <polyline points="780,640 840,610 900,560 960,540 1020,470 1080,450 1140,430 1200,410" fill="none" stroke="#ef4444" stroke-width="4"/>
+  <polyline points="780,660 840,630 900,600 960,590 1020,560 1080,520 1140,500 1200,490" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <polyline points="780,670 840,650 900,640 960,620 1020,610 1080,590 1140,570 1200,560" fill="none" stroke="#10b981" stroke-width="4"/>
+  <text x="1120" y="360" font-family="Arial" font-size="16" fill="#ef4444">Film A</text>
+  <text x="1120" y="385" font-family="Arial" font-size="16" fill="#2563eb">Film B</text>
+  <text x="1120" y="410" font-family="Arial" font-size="16" fill="#10b981">Film C</text>
+  <text x="70" y="810" font-family="Arial" font-size="18" fill="#6b7280">Maquette indicative pour orienter la mise en page Power BI.</text>
+</svg>
