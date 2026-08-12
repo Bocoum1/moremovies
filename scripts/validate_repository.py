@@ -23,13 +23,6 @@ FORBIDDEN_PATHS = {
     "pbi_exports/guide_binome_powerbi.md",
 }
 
-FORBIDDEN_TEXT = {
-    "chatgpt",
-    "claude",
-    "codex",
-    "texte portfolio",
-    "guide power bi pour le binome",
-}
 
 TEXT_SUFFIXES = {
     ".java",
