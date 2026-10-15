@@ -21,18 +21,9 @@ de données. Elles peuvent être ouvertes avec Spoon (Pentaho Data Integration
 | `integrated/` | Référentiels et transactions harmonisés | 9 |
 | `warehouse/` | Dimensions, faits et agrégats ROLAP | 9 |
 
-## Configuration locale
-
-Les connexions publiées utilisent volontairement les valeurs neutres
-`change_me`. Les chemins d'entrée sont remplacés par
-`/path/to/exports_csv/...`.
-
 Avant toute exécution dans Spoon :
 
 1. configurer les connexions MySQL de l'environnement local ;
 2. renseigner les chemins vers les fichiers sources autorisés ;
 3. exécuter les scripts SQL de [`sql/mysql`](../sql/mysql) ;
 4. vérifier les types, les clés et le nombre de lignes à chaque couche.
-
-Les mots de passe réels et les fichiers de données ne doivent jamais être
-enregistrés dans les transformations versionnées.
