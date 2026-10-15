@@ -123,18 +123,6 @@ PBI_EXPORT_MYSQL_PASSWORD='...' ./pbi_exports/export_pbi_tsv.sh
 La structure recommandée du rapport est documentée dans
 [`pbi_exports/reporting_specification.md`](pbi_exports/reporting_specification.md).
 
-## Qualité et sécurité
-
-Le dépôt public ne contient ni données brutes, ni mot de passe, ni fichier
-d'environnement local. Les connexions PDI utilisent des valeurs neutres qui
-doivent être configurées avant exécution.
-
-Le contrôle suivant valide les fichiers XML/PDI, les volumes attendus et
-l'absence d'artefacts privés connus :
-
-```bash
-python3 scripts/validate_repository.py
-```
 
 ## Technologies
 
