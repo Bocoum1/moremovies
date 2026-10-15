@@ -72,6 +72,3 @@ VariationLocations =
         [NbLocationsMoisPrecedent]
     )
 ```
-
-Une mise en forme conditionnelle met en évidence les valeurs inférieures à
-`-0,15`.
