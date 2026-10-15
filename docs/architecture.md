@@ -13,7 +13,7 @@ traçabilité entre les sources et le modèle analytique.
 
 ## Harmonisation
 
-Les transformations PDI appliquent notamment les opérations suivantes :
+Les transformations PDI appliquent surtout les opérations suivantes :
 
 - normalisation des identifiants provenant de plusieurs systèmes ;
 - unification des noms, genres, dates et attributs produits ;
