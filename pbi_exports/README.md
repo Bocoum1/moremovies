@@ -24,7 +24,6 @@ Variables optionnelles :
 - `PBI_EXPORT_MYSQL_PORT` (défaut : `3306`) ;
 - `PBI_EXPORT_MYSQL_DB` (défaut : `mm_warehouse`) ;
 - `PBI_EXPORT_MYSQL_USER` (défaut : `mondrian_user`).
-
-Les exports générés contiennent des données et ne sont pas destinés à être
-versionnés. La conception des pages et des mesures est décrite dans
+-
+La conception des pages et des mesures est décrite dans
 [`reporting_specification.md`](reporting_specification.md).
