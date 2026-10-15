@@ -38,6 +38,3 @@ Depuis la racine du dépôt :
 ./mondrian/local/run_mdx.sh \
   mondrian/mdx/01_ca_total_par_magasin_et_par_annee.mdx
 ```
-
-Ce mode valide rapidement le catalogue et les requêtes sans déployer de
-serveur XML/A.
