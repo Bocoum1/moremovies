@@ -108,10 +108,6 @@ cp mondrian/local/mondrian.env.example mondrian/local/mondrian.env
 ./mondrian/local/run_mdx.sh \
   mondrian/mdx/01_ca_total_par_magasin_et_par_annee.mdx
 ```
-
-Le mode XML/A est décrit dans
-[`mondrian/README_xmla_local.md`](mondrian/README_xmla_local.md).
-
 ### 4. Préparer Power BI
 
 Une fois l'entrepôt alimenté, générer les fichiers d'analyse :
