@@ -9,11 +9,8 @@ préparation du reporting.
 
 ## Démonstration vidéo
 
-<a href="https://raw.githubusercontent.com/Bocoum1/moremovies/main/docs/demo/moremovies.mp4">
-  <img src="docs/demo/moremovies-poster.png" alt="Voir la démonstration vidéo de MoreMovies" width="420">
-</a>
+https://github.com/user-attachments/assets/b14d0b49-2607-4e73-af26-46e5e8733783
 
-**[Voir la vidéo](https://raw.githubusercontent.com/Bocoum1/moremovies/main/docs/demo/moremovies.mp4)**
 Durée : 1 min 23, sans son. [Télécharger le MP4](docs/demo/moremovies.mp4?raw=true).
 
 Des sources à l'analyse : nettoyage, intégration et exploration des données.
