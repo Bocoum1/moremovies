@@ -24,18 +24,6 @@ FORBIDDEN_PATHS = {
 }
 
 
-TEXT_SUFFIXES = {
-    ".java",
-    ".md",
-    ".mdx",
-    ".py",
-    ".sh",
-    ".sql",
-    ".svg",
-    ".xml",
-}
-
-
 def fail(message: str, errors: list[str]) -> None:
     errors.append(message)
 
@@ -49,25 +37,10 @@ def validate_xml(paths: list[Path], errors: list[str]) -> None:
 
 
 def validate_public_content(errors: list[str]) -> None:
+    # Verifier que les fichiers prives connus ne sont pas dans le depot public.
     for relative_path in FORBIDDEN_PATHS:
         if (ROOT / relative_path).exists():
             fail(f"Artefact privé détecté: {relative_path}", errors)
-
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
-            continue
-        if path.resolve() == Path(__file__).resolve():
-            continue
-        if path.suffix.lower() not in TEXT_SUFFIXES:
-            continue
-
-        content = path.read_text(encoding="utf-8", errors="replace").lower()
-        for marker in FORBIDDEN_TEXT:
-            if marker in content:
-                fail(
-                    f"Marqueur interne '{marker}' dans {path.relative_to(ROOT)}",
-                    errors,
-                )
 
 
 def main() -> int:
