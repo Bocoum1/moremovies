@@ -7,7 +7,18 @@ commun, puis alimente un entrepôt ROLAP exploitable en MDX et dans Power BI. Le
 projet couvre la modélisation, l'intégration ETL, l'optimisation analytique et la
 préparation du reporting.
 
-![Architecture de MoreMovies](docs/architecture.svg)
+## Démonstration vidéo
+
+<a href="https://raw.githubusercontent.com/Bocoum1/moremovies/main/docs/demo/moremovies.mp4">
+  <img src="docs/demo/moremovies-poster.png" alt="Voir la démonstration vidéo de MoreMovies" width="420">
+</a>
+
+**[Voir la vidéo](https://raw.githubusercontent.com/Bocoum1/moremovies/main/docs/demo/moremovies.mp4)**
+Durée : 1 min 23, sans son. [Télécharger le MP4](docs/demo/moremovies.mp4?raw=true).
+
+Des sources à l'analyse : nettoyage, intégration et exploration des données.
+La vidéo présente une restitution pédagogique complémentaire du projet,
+pas une capture de Power BI ou de Spoon.
 
 ## En bref
 
